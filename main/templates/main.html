@@ -1,0 +1,12 @@
+<h1>Minecraft Inventory</h1>
+
+{% for item in items %}
+<h5>Name:</h5>
+<p>{{ item.name }}</p>
+
+<h5>Amount:</h5>
+<p>{{ item.amount }}</p>
+
+<h5>Description:</h5>
+<p>{{ item.description }}</p>
+{% endfor %}
