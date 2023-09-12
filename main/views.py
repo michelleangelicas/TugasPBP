@@ -2,6 +2,11 @@ from django.shortcuts import render
 
 # Create your views here.
 def show_main(request):
+    student_info = {
+        'nama_mahasiswa': 'Michelle Angelica Santoso',
+        'class': 'PBP C',
+    }
+
     items = [
         {
             'name': 'Diamond',
@@ -22,6 +27,7 @@ def show_main(request):
     ]
 
     context = {
+        'student_info': student_info,
         'items': items,
     }
 
