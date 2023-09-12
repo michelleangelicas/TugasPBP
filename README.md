@@ -4,6 +4,30 @@ Link hasil deploy aplikasi : https://tugas-pbp.adaptable.app/
 
 ## Step by Step implementasi
 
+### Membuat sebuah proyek Django baru & membuat aplikasi dengan nama main pada proyek tersebut.
+Buka terminal Linux dan navigasi ke direktori TugasPBP, kemudian aktifkan virtual environment yang telah dibuat sebelumnya dengan menjalankan perintah `source env/bin/activate`.
+
+Setelah environment aktif, jalankan perintah `python manage.py startapp main` untuk membuat aplikasi baru dengan nama "main". Ini akan menghasilkan direktori baru yang berisi semua file dan struktur yang diperlukan untuk aplikasi. Selanjutnya, kita perlu mendaftarkan aplikasi ini ke dalam proyek. Buka file `settings.py` yang berada dalam direktori proyek "shopping_list", cari variabel `INSTALLED_APPS` dan tambahkan `'main'` ke dalam daftar aplikasi yang sudah terdaftar. Dengan demikian, aplikasi "main" sekarang sudah terdaftarkan dan siap untuk dikembangkan lebih lanjut.
+
+### Membuat model pada aplikasi main dengan nama Item dan memiliki atribut wajib
+Aplikasi ini memanfaatkan model `Product` yang memiliki field seperti `name`, `amount`, dan `description`. Saya juga telah membuat sebuah template HTML dasar, "main.html", yang akan digunakan untuk menampilkan data dari model ini.
+
+Langkah pertama adalah menambahkan definisi model ke dalam `models.py` di direktori aplikasi "main". Saya telah mendefinisikan kelas `Product` yang mewarisi dari `models.Model`, dan menambahkan field yang sesuai.
+
+Setelah itu, saya menjalankan perintah `python manage.py makemigrations` untuk membuat migrasi model. Migrasi ini adalah sebuah skrip yang Django gunakan untuk menerapkan perubahan pada database. Selanjutnya, saya menerapkan migrasi ini dengan perintah `python manage.py migrate`, yang akan memperbarui struktur database sesuai dengan model yang telah saya definisikan.
+
+Template "main.html" saya saat ini menampilkan data statis, tetapi setelah saya melalui tutorial lebih lanjut, template ini akan diisi dengan data dinamis dari model `Product`.
+
+### Membuat sebuah fungsi pada views.py untuk dikembalikan ke dalam sebuah template HTML yang menampilkan nama aplikasi serta nama dan kelas kamu.
+Saya telah membuat sebuah view bernama `show_main`. View ini mendefinisikan data dalam bentuk dictionary dan me-render template "main.html" dengan data tersebut. Saya menggunakan fungsi `render` dari modul `django.shortcuts` untuk menggabungkan data dari view dengan template HTML. Saya juga menambahkan data seperti name, amount, dan description. Ini memungkinkan saya untuk membuat tampilan web yang dinamis, di mana data dari view ditampilkan dalam template HTML.
+
+### Melakukan routing pada proyek agar dapat menjalankan aplikasi main & membuat sebuah routing pada urls.py aplikasi main untuk memetakan fungsi yang telah dibuat pada views.py.
+Saya telah mengonfigurasi routing URL melalui dua berkas `urls.py`—satu di tingkat aplikasi (`main`) dan satu lagi di tingkat proyek (`TugasPBP`). Di tingkat aplikasi, saya mendefinisikan URL dengan memanfaatkan fungsi `show_main` dari modul `main.views` dan mengaturnya sebagai tampilan utama. Di tingkat proyek, saya memanfaatkan fungsi `include` dari `django.urls` untuk mengintegrasikan URL aplikasi `main` ke dalam proyek. Akhirnya, saya menjalankan server dan mengakses halaman melalui peramban dengan alamat "http://localhost:8000/main/". Ini menunjukkan implementasi sukses dari routing URL di Django, memungkinkan tampilan yang saya buat di aplikasi `main` untuk diakses dan ditampilkan pada peramban web.
+
+### Melakukan deployment ke Adaptable terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
+Tahap deployment dilakukan dengan menghubungkan app Adaptable dengan repository yang terdapat pada github. Saya menyesuaikan versi Python dengan spesifikasi aplikasi. Lalu, memsaukkan perintah `python manage.py migrate && gunicorn TugasPBP.wsgi`. Lalu, saya mencentang bagian `HTTP Listener on PORT` dan meng-klik `Deploy App`.
+
+
 ## Request-Response Django Lifecycle
 
 <img width="567" alt="Screenshot 2023-09-08 at 10 08 20 PM" src="https://github.com/michelleangelicas/TugasPBP/assets/124910033/9225c6db-cccd-4eaa-880d-067c1921ed76">
