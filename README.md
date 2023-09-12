@@ -1,6 +1,6 @@
 # Tugas 2 PBP
 
-Link hasil deploy aplikasi : https://tugas-pbp.adaptable.app/
+Link hasil deploy aplikasi : https://tugas-pbp.adaptable.app/main
 
 ## Step by Step implementasi
 
