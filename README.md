@@ -30,7 +30,7 @@ Tahap deployment dilakukan dengan menghubungkan app Adaptable dengan repository 
 
 ## Request-Response Django Lifecycle
 
-<img width="567" alt="Screenshot 2023-09-08 at 10 08 20 PM" src="https://github.com/michelleangelicas/TugasPBP/assets/124910033/9225c6db-cccd-4eaa-880d-067c1921ed76">
+<img width="617" alt="Screenshot 2023-09-12 at 2 09 26 PM" src="https://github.com/michelleangelicas/TugasPBP/assets/124910033/66a3c3cf-34b3-4146-8d6b-2afeb2aa6639">
 
 Ketika seorang user atau klien mengakses server melalui URL atau form, Django akan membandingkan URL yang diminta dengan URL yang telah ditentukan dalam file urls.py. 
 Setiap URL akan dihubungkan ke fungsi khusus dalam file views.py, yang akan memicu fungsi view. 
