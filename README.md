@@ -27,3 +27,19 @@ Karena alasan-alasan ini, JSON telah menjadi salah satu format paling populer un
 2. Membuat form input data dan tampilan pada HTML. Membuat berkas forms.py yang mempunyai fields name, amount, description. Menambahkan fungsi create_product, show_main. Menambahkan path url path`('create-product', create_product, name='create_product’)`, lalu membuat berkas html baru create_product.html
 3. Menjadikan data dalam bentuk XML dan JSON dengan membuat fungsi dan menambahkan path url dalam urlpatterns. 
 4. menjadikan data berdasarkan ID dalam bentuk XML, JSON. Menambahkan function `show_xml_by_id` dan `show_json_by_id` di views.py dan menambahkan urlpatterns pada urls.py. 
+
+## Postman
+### HTML
+<img width="1392" alt="Screenshot 2023-09-18 at 12 07 31 PM" src="https://github.com/michelleangelicas/TugasPBP/assets/124910033/8c10e269-bfd9-4e06-a84e-b6f04b10c914">
+
+### XML
+<img width="1392" alt="Screenshot 2023-09-18 at 12 06 32 PM" src="https://github.com/michelleangelicas/TugasPBP/assets/124910033/31fee51b-4488-4ad4-845b-7060725d6c88">
+
+### JSON
+<img width="1392" alt="Screenshot 2023-09-18 at 12 07 19 PM" src="https://github.com/michelleangelicas/TugasPBP/assets/124910033/bd8c26e5-7975-43d3-801b-f424b4719962">
+
+### XML by id
+<img width="1392" alt="Screenshot 2023-09-18 at 12 08 05 PM" src="https://github.com/michelleangelicas/TugasPBP/assets/124910033/cfa257a5-15c4-4283-ace7-bfd278fd6cec">
+
+### JSON by id
+<img width="1392" alt="Screenshot 2023-09-18 at 12 08 16 PM" src="https://github.com/michelleangelicas/TugasPBP/assets/124910033/6e063e35-bbf8-4be5-8dcd-cb13c725a080">
