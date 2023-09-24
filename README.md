@@ -1,3 +1,6 @@
+<details>
+<summary>Tugas 3</summary>
+
 # Tugas 3 PBP
 
 ## Apa perbedaan antara form POST dan form GET dalam Django?
@@ -43,3 +46,68 @@ Karena alasan-alasan ini, JSON telah menjadi salah satu format paling populer un
 
 ### JSON by id
 <img width="1392" alt="Screenshot 2023-09-18 at 12 08 16 PM" src="https://github.com/michelleangelicas/TugasPBP/assets/124910033/6e063e35-bbf8-4be5-8dcd-cb13c725a080">
+
+</details>
+
+<details>
+<summary>Tugas 4</summary>
+
+# Tugas 4
+
+## Django UserCreationForm
+UserCreationForm adalah sebuah form bawaan Django yang digunakan untuk membuat pengguna baru. Form ini sudah termasuk validasi data masukan dan umumnya digunakan bersama dengan `django.contrib.auth.views`, yang menyediakan view untuk proses registrasi pengguna.
+
+### Kelebihan
+* Penggunaan yang Mudah: Ini adalah form yang sudah dibuat oleh Django, sehingga pengembang tidak perlu membuat form dari awal.
+* Validasi Terintegrasi: Form ini sudah memiliki validasi terintegrasi, sehingga mengurangi risiko error.
+* Pengembangan Cepat: Menggunakan komponen bawaan Django seperti UserCreationForm memungkinkan pengembangan aplikasi secara lebih cepat.
+* Keamanan: Form ini mengimplementasikan praktik keamanan terbaik, yang melindungi dari serangan umum seperti SQL Injection.
+
+### Kekurangan
+* Kustomisasi Terbatas: Karena UserCreationForm adalah form bawaan, mengkustomisasinya bisa lebih sulit dibandingkan dengan membuat form sendiri.
+* Kurang Fleksibel: Tidak cocok untuk skenario penggunaan yang membutuhkan logika atau validasi yang lebih kompleks.
+
+
+## Autentikasi vs Otorisasi di Django
+Autentikasi: Proses verifikasi identitas pengguna. Dalam konteks Django, autentikasi sering kali dilakukan dengan memeriksa kombinasi username dan password pengguna, dan framework ini menyediakan back-end autentikasi yang dapat dikustomisasi sesuai kebutuhan.
+
+Otorisasi: Setelah autentikasi berhasil, otorisasi adalah proses pemberian hak akses atau izin kepada pengguna untuk mengakses sumber daya tertentu. Django menyediakan sistem perizinan yang dapat dikustomisasi untuk membatasi akses ke objek dan tipe objek tertentu dalam sistem.
+
+### Mengapa Keduanya Penting?
+* Keamanan dan Perlindungan Data: Autentikasi dan otorisasi adalah elemen kunci dalam melindungi data dan sumber daya dari akses yang tidak sah. Autentikasi memastikan bahwa pengguna adalah siapa yang mereka klaim, sedangkan otorisasi memastikan bahwa pengguna hanya dapat mengakses sumber daya yang diizinkan.
+* Pemenuhan Kebijakan dan Persyaratan: Banyak aplikasi web perlu mematuhi kebijakan keamanan tertentu atau memenuhi persyaratan hukum tertentu mengenai perlindungan data dan privasi pengguna.
+* Manajemen Akses: Sistem yang memiliki pengguna dengan berbagai tingkatan akses, seperti admin, staff, dan pengguna biasa, memerlukan pengelolaan hak akses yang baik untuk memastikan operasional yang lancar dan menghindari penyalahgunaan hak akses.
+
+## Cookies dalam Konteks Aplikasi Web
+Cookies adalah potongan data kecil yang disimpan oleh browser web di sisi klien. Cookies digunakan oleh aplikasi web untuk menyimpan informasi tentang pengguna, seperti preferensi pengguna, data sesi, atau lainnya. Dengan menggunakan cookies, aplikasi web dapat "mengingat" pengguna dan menyediakan pengalaman yang lebih kustomisasi dan responsif.
+
+### Django menggunakan cookies untuk mengelola data sesi pengguna
+Secara default, Django menggunakan mekanisme cookie berbasis sesi untuk menyimpan ID sesi pengguna. Data sesi itu sendiri disimpan di sisi server. Dengan cara ini, informasi pengguna, seperti data autentikasi, disimpan dengan aman di server, sementara browser hanya menyimpan ID sesi yang unik dan aman. Django mengatur ini secara otomatis dan memungkinkan pengembang untuk memilih penyimpanan sesi yang berbeda jika dibutuhkan.
+
+
+## Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+Penggunaan cookies dalam pengembangan web memiliki potensi risiko, dan tidak sepenuhnya aman secara default. Sebagai developer, ada beberapa langkah yang harus diambil untuk memastikan bahwa cookies seaman mungkin.
+
+### Risiko Potensial
+* Intersepsi Cookie: Cookies yang ditransmisikan melalui HTTP (tanpa enkripsi) dapat diintersep dan dibaca oleh pihak ketiga. Penggunaan HTTPS dapat mencegah risiko ini.
+
+* Cross-Site Scripting (XSS): Cookies dapat diakses melalui skrip JavaScript. Jika sebuah situs rentan terhadap serangan XSS, cookies dapat dicuri oleh attacker.
+
+* Cross-Site Request Forgery (CSRF): Cookies otomatis dikirim dengan setiap permintaan ke domain yang mengatur cookie, sehingga dapat digunakan untuk melancarkan serangan CSRF.
+
+* Overwriting Cookies: Cookie dari subdomain dapat menimpa cookie dari domain utama, yang dapat dimanfaatkan untuk serangan.
+
+* Theft and Replay Attacks: Jika cookies dicuri, mereka dapat digunakan untuk mengimpersonasi pengguna yang sah.
+
+### Pengamanan Cookies
+* HTTPS dan Secure Attribute: Selalu gunakan HTTPS dan atur Secure attribute pada cookies untuk menghindari intersepsi oleh man-in-the-middle.
+
+* HttpOnly Attribute: Atur attribute HttpOnly pada cookies untuk mencegah akses melalui JavaScript dan mengurangi risiko serangan XSS.
+
+* SameSite Attribute: Gunakan SameSite attribute untuk mencegah cookies dikirimkan dalam permintaan cross-site, yang membantu melindungi terhadap serangan CSRF.
+
+* Domain dan Path Attributes: Tentukan domain dan path cookies secara eksplisit untuk menghindari overwriting dan pengiriman yang tidak diinginkan.
+
+* Masa Berlaku yang Terbatas: Beri cookies masa berlaku yang terbatas untuk mengurangi jangka waktu dimana cookies yang dicuri dapat digunakan.
+
+</details>
