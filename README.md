@@ -110,4 +110,25 @@ Penggunaan cookies dalam pengembangan web memiliki potensi risiko, dan tidak sep
 
 * Masa Berlaku yang Terbatas: Beri cookies masa berlaku yang terbatas untuk mengurangi jangka waktu dimana cookies yang dicuri dapat digunakan.
 
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+### Membuat fungsi dan form registrasi. 
+Pertama, menambahkan fungsi register dengan parameter request. Lalu, membuat berkas register.html dan menambahkan path url ke urlpatterrns. 
+
+### Membuat fungsi login
+menambahkan fungsi login_user dengan parameter request. Lalu, menambahkan berkas login.html dengan template yang tersedia. Lalu, menambahkan path url ke urlpatterns.
+
+### Membuat fungsi logout
+menambahkan fungsi logout_user dan menmbahkan button logout. Lalu, menambahkan path url ke urlpatterns. 
+
+### Merestriksi akses halaman main
+menambahkan kode `@login_required(login_url='/login’)`
+
+### Menggunakan data dari cookies
+mengganti kode di bawah blok if user is not none untuk melihat kapan terakhir kali pengguna melakukan login. Lalu, menambahkan 'last_login' untuk isi context pada fungsi show_main. Lalu, mengubah fungsi logout_user dengan `response.delete_cookie('last_login’)`. Lalu, menambahkan potongan kode di main.html untuk menampilkan data last login.
+
+### Menghubungkan Model Product dengan User
+Menambahkan kode ForeignKey. Lalu, mengubah kode pada fungsi create_product pada views.py, dan mengubah fungsi show_main sehingga product menyesuaikan usernya. 
+
 </details>
