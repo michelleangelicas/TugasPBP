@@ -132,11 +132,11 @@ mengganti kode di bawah blok `if user is not none` untuk melihat kapan terakhir 
 Menambahkan kode ForeignKey. Lalu, mengubah kode pada fungsi create_product pada views.py, dan mengubah fungsi show_main sehingga product menyesuaikan usernya. 
 
 ### Menambahkan fungsionalitas menambah dan mengurangi jumlah serta menghapus produk
-1. Menambahkan View Fungsi
+1. Menambahkan View Fungsi.
 Tambahkan fungsi di views.py untuk menghandle peningkatan jumlah (increase_amount), pengurangan jumlah (decrease_amount), dan penghapusan produk (delete_product).
-2. Meng-update URL Patterns
+2. Meng-update URL Patterns.
 Tambahkan URL baru di urls.py yang mengarah ke fungsi-fungsi baru yang telah dibuat.
-3. Meng-update Template
+3. Meng-update Template.
 Tambahkan tautan atau tombol di template HTML (main.html) yang mengarah ke URL baru untuk memanggil fungsi yang sesuai.
 
 </details>
