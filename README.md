@@ -114,7 +114,7 @@ Penggunaan cookies dalam pengembangan web memiliki potensi risiko, dan tidak sep
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 ### Membuat fungsi dan form registrasi. 
-Pertama, menambahkan fungsi register dengan parameter request. Lalu, membuat berkas register.html dan menambahkan path url ke urlpatterrns. 
+Pertama, menambahkan fungsi register dengan parameter request. Lalu, membuat berkas register.html dan menambahkan path url ke urlpatterns. 
 
 ### Membuat fungsi login
 menambahkan fungsi login_user dengan parameter request. Lalu, menambahkan berkas login.html dengan template yang tersedia. Lalu, menambahkan path url ke urlpatterns.
