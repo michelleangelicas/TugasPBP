@@ -126,7 +126,7 @@ menambahkan fungsi logout_user dan menmbahkan button logout. Lalu, menambahkan p
 menambahkan kode `@login_required(login_url='/login’)`
 
 ### Menggunakan data dari cookies
-mengganti kode di bawah blok if user is not none untuk melihat kapan terakhir kali pengguna melakukan login. Lalu, menambahkan 'last_login' untuk isi context pada fungsi show_main. Lalu, mengubah fungsi logout_user dengan `response.delete_cookie('last_login’)`. Lalu, menambahkan potongan kode di main.html untuk menampilkan data last login.
+mengganti kode di bawah blok `if user is not none` untuk melihat kapan terakhir kali pengguna melakukan login. Lalu, menambahkan 'last_login' untuk isi context pada fungsi show_main. Lalu, mengubah fungsi logout_user dengan `response.delete_cookie('last_login’)`. Lalu, menambahkan potongan kode di main.html untuk menampilkan data last login.
 
 ### Menghubungkan Model Product dengan User
 Menambahkan kode ForeignKey. Lalu, mengubah kode pada fungsi create_product pada views.py, dan mengubah fungsi show_main sehingga product menyesuaikan usernya. 
