@@ -259,124 +259,20 @@ Ketika Anda menginginkan desain yang benar-benar kustom dan unik.
 Ketika Anda menyukai pendekatan utility-first dan ingin menghindari penggunaan CSS kustom.
 Bagus untuk proyek-proyek yang lebih besar dan tim yang membutuhkan kontrol lebih atas desain.
 
-</details>
+##  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+- Menambahkan bootstrap CSS dan JS
+- Menambahkan navbar
 
+### Menambahkan tombol edit
+- Menambahkan fungsi `edit_product` dan berkas html `edit_product.html` untuk tombol edit pada product
+- Menambahkan tombol `edit_product` pada `main.html` agar terlihat tombol edit pada setiap product
 
-<details>
-<summary>Tugas 5</summary>
+### Membuat fungsi hapus
+- Membuat fungsi baru `delete_product` pada `views.py`
+- Menambahkan tombol `delete_product` pada `main.html`
 
-# Tugas 5 PBP
+### Desain
+- Mendesain tampilan website dengan menambahkan style pada `main.html`
 
-## Manfaat dari Setiap Element Selector
-* Type Selector:
-    Manfaat: Digunakan untuk memilih dan mengatur gaya untuk semua elemen HTML dari jenis yang sama.
-    Waktu yang Tepat: Ketika ingin menerapkan gaya yang sama ke semua elemen dengan tipe tertentu pada halaman web.
-* Class Selector:
-    Manfaat: Digunakan untuk memilih dan mengatur gaya untuk elemen HTML yang memiliki atribut class tertentu.
-    Waktu yang Tepat: Ketika beberapa elemen pada halaman web memerlukan gaya yang sama, atau ketika menggunakan framework CSS seperti Bootstrap.
-* ID Selector:
-    Manfaat: Digunakan untuk memilih dan mengatur gaya untuk elemen HTML yang memiliki atribut id tertentu.
-    Waktu yang Tepat: Ketika perlu mengatur gaya untuk elemen yang unik dalam dokumen.
-* Attribute Selector:
-    Manfaat: Digunakan untuk memilih elemen berdasarkan keberadaan atau nilai dari atributnya.
-    Waktu yang Tepat: Ketika perlu memilih elemen berdasarkan atributnya, seperti memilih input berdasarkan tipe inputnya.
-* Descendant Selector:
-    Manfaat: Digunakan untuk memilih elemen yang merupakan keturunan dari elemen lain.
-    Waktu yang Tepat: Ketika perlu mengatur gaya pada elemen yang berada di dalam elemen lain, seperti mengatur gaya pada paragraf di dalam div.
-* Pseudo-class Selector:
-    Manfaat: Digunakan untuk mengatur gaya pada elemen dalam keadaan tertentu, seperti :hover, :focus, dll.
-    Waktu yang Tepat: Ketika perlu mengatur gaya berdasarkan keadaan elemen seperti ketika mouse berada di atas elemen atau ketika elemen mendapatkan fokus.
-
-## HTML5 Tag
-
-a. `<header>`:
-Digunakan untuk memuat elemen header seperti judul, logo, navigasi, dll.
-
-b. `<nav>`:
-Digunakan untuk menandai blok navigasi, biasanya berisi menu atau daftar link.
-
-c. `<main>`:
-Digunakan untuk menampung konten utama dari halaman web, dan biasanya hanya ada satu per halaman.
-
-d. `<article>`:
-Digunakan untuk menandai konten independen seperti postingan blog atau artikel berita.
-
-e. `<section>`:
-Digunakan untuk mengelompokkan konten dan biasanya memiliki heading terkait.
-
-f. `<aside>`:
-Digunakan untuk menampung konten yang berhubungan tetapi terpisah dari konten utama, seperti sidebar.
-
-g. `<footer>`:
-Digunakan untuk menampung elemen footer seperti informasi hak cipta, link, dll.
-
-h. `<figure>` dan `<figcaption>`:
-`<figure>` digunakan untuk melampirkan gambar, diagram, dll, dan `<figcaption>` digunakan untuk memberikan keterangan untuk elemen `<figure>`.
-
-i. `<mark>`:
-Digunakan untuk menandai atau menyoroti teks.
-
-j. `<progress>`:
-Digunakan untuk menampilkan bar kemajuan.
-
-k. `<output>`:
-Digunakan untuk menampilkan hasil dari sebuah perhitungan atau aksi pengguna.
-
-l. `<canvas>`:
-Digunakan untuk menggambar grafik, membuat game, atau memanipulasi gambar dengan JavaScript.
-
-m. `<video>` dan `<audio>`:
-`<video>` digunakan untuk menambahkan video, dan `<audio>` digunakan untuk menambahkan audio.
-
-n. `<time>`:
-Digunakan untuk merepresentasikan waktu atau tanggal.
-
-## Perbedaan antara Margin dan Padding
-
-### Margin
-
-Margin adalah properti CSS yang digunakan untuk menciptakan ruang sekitar elemen, di luar batas tepi (border) yang ada.
-Margin tidak memiliki warna dan selalu transparan.
-Margin bisa digunakan untuk membuat jarak antara dua elemen.
-
-### Padding
-
-Padding adalah properti CSS yang digunakan untuk menciptakan ruang sekitar konten elemen, di dalam batas tepi (border) yang ada.
-Padding dapat memiliki warna, yaitu warna dari elemen tersebut.
-Padding digunakan untuk membuat jarak antara konten dan batas tepi (border) elemen tersebut.
-
-
-## Perbedaan antara Framework CSS Tailwind dan Bootstrap
-### Tailwind CSS
-
-Tailwind adalah framework CSS yang berfungsi sebagai utility-first CSS framework.
-Dalam Tailwind, kelas-kelas kecil dan tunggal digunakan secara komprehensif untuk membangun desain.
-Tailwind memberikan kontrol yang lebih granular terhadap desain, memungkinkan pengembang membuat desain yang unik dan kustom.
-Biasanya memerlukan konfigurasi lebih pada awal pengembangan.
-Lebih fleksibel dan memungkinkan lebih banyak variasi desain.
-
-### Bootstrap
-
-Bootstrap adalah framework CSS yang mengandung pre-designed components.
-Bootstrap menyediakan komponen-komponen yang sudah distilasi desainnya, seperti kartu, navigasi, modal, dll.
-Lebih cepat untuk prototyping atau membangun aplikasi dengan desain standar.
-Mungkin lebih mudah untuk pemula karena banyaknya dokumentasi dan komunitas yang mendukung.
-Memungkinkan pengembangan yang lebih cepat untuk proyek-proyek yang tidak memerlukan desain kustom.
-
-### Kapan Menggunakan Bootstrap daripada Tailwind, dan Sebaliknya?
-
-### Menggunakan Bootstrap
-
-Ketika Anda membutuhkan prototyping yang cepat dan efisien.
-Ketika Anda membutuhkan komponen yang sudah jadi dan mendesain ulang tidak perlu.
-Ketika Anda membutuhkan dokumentasi yang luas dan komunitas yang besar untuk dukungan.
-Bagus untuk proyek-proyek yang lebih kecil atau jika Anda baru memulai dengan pengembangan front-end.
-
-### Menggunakan Tailwind CSS
-
-Ketika Anda membutuhkan kontrol yang lebih granular atas desain dan styling.
-Ketika Anda menginginkan desain yang benar-benar kustom dan unik.
-Ketika Anda menyukai pendekatan utility-first dan ingin menghindari penggunaan CSS kustom.
-Bagus untuk proyek-proyek yang lebih besar dan tim yang membutuhkan kontrol lebih atas desain.
 
 </details>
