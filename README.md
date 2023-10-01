@@ -259,4 +259,20 @@ Ketika Anda menginginkan desain yang benar-benar kustom dan unik.
 Ketika Anda menyukai pendekatan utility-first dan ingin menghindari penggunaan CSS kustom.
 Bagus untuk proyek-proyek yang lebih besar dan tim yang membutuhkan kontrol lebih atas desain.
 
+##  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step
+- Menambahkan bootstrap CSS dan JS
+- Menambahkan navbar
+
+### Menambahkan tombol edit
+- Menambahkan fungsi `edit_product` dan berkas html `edit_product.html` untuk tombol edit pada product
+- Menambahkan tombol `edit_product` pada `main.html` agar terlihat tombol edit pada setiap product
+
+### Membuat fungsi hapus
+- Membuat fungsi baru `delete_product` pada `views.py`
+- Menambahkan tombol `delete_product` pada `main.html`
+
+### Desain
+- Mendesain tampilan website dengan menambahkan style pada `main.html`
+
+
 </details>
