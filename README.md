@@ -276,3 +276,65 @@ Bagus untuk proyek-proyek yang lebih besar dan tim yang membutuhkan kontrol lebi
 
 
 </details>
+
+
+<details>
+<summary>Tugas 6</summary>
+
+# Tugas 6
+
+## Penerapan Asynchronous Programming pada AJAX
+
+AJAX (Asynchronous JavaScript and XML) adalah teknik yang digunakan dalam pengembangan web untuk mengirim dan menerima data dari server secara asinkron tanpa harus memuat ulang seluruh halaman web. Penerapan asynchronous programming pada AJAX adalah inti dari fungsionalitas ini. Dalam konteks AJAX:
+
+- Asynchronous Programming: Ketika melakukan permintaan AJAX, menggunakan JavaScript untuk membuat permintaan ke server secara asinkron. Ini berarti bahwa permintaan tersebut tidak akan memblokir eksekusi kode JavaScript lainnya. Alih-alih menunggu server merespons, kode JavaScript dapat melanjutkan menjalankan tugas lain. Saat respons dari server tiba, kita dapat meresponsnya dengan mengaitkan fungsi callback yang akan dijalankan. Ini memungkinkan aplikasi web untuk tetap responsif dan tidak menghentikan pengguna dari berinteraksi dengan halaman web selama permintaan AJAX sedang berlangsung.
+
+## Perbandingan Fetch API dengan jQuery untuk AJAX
+
+1. **Fetch API**:
+   - **Kelebihan**:
+     - Terintegrasi dalam JavaScript modern, tidak perlu mengimpor library eksternal.
+     - Memiliki dukungan asli untuk Promise, yang membuatnya lebih mudah digunakan dengan asynchronous programming.
+     - Lebih ringan dan modular, sehingga memungkinkan memilih bagian yang ingin digunakan.
+     - Mendukung format data selain XML, seperti JSON, yang umum digunakan dalam pertukaran data.
+
+   - **Kekurangan**:
+     - Memerlukan penanganan khusus untuk menangani respons HTTP yang berbeda (seperti penanganan error HTTP).
+
+2. **jQuery**:
+   - **Kelebihan**:
+     - Menyediakan antarmuka yang lebih sederhana dan konsisten untuk AJAX, yang memungkinkan pemrogram lebih mudah mengirim permintaan dan menangani respons.
+     - Dapat menangani respons HTTP yang berbeda dengan lebih baik secara otomatis.
+     - Memiliki dukungan lintas-browser yang kuat, sehingga tidak perlu khawatir tentang perbedaan implementasi browser.
+
+   - **Kekurangan**:
+     - Berukuran lebih besar dibandingkan dengan Fetch API karena termasuk banyak fitur lain selain AJAX.
+     - Bergantung pada library eksternal tambahan (meskipun di masa lalu, ini lebih penting daripada saat ini).
+
+**Pendapat**:
+
+Pilihan antara Fetch API dan jQuery untuk AJAX sebagian besar tergantung pada kebutuhan proyek dan preferensi sebagai pengembang. Fetch API adalah pilihan yang baik jika ingin menjaga aplikasi tetap ringan, menggunakan fitur terbaru JavaScript, dan memiliki kendali yang lebih besar atas bagaimana cara menangani permintaan dan respons. Ini lebih modern dan disarankan untuk proyek-proyek baru atau yang telah menggunakan ekosistem JavaScript modern.
+
+Di sisi lain, jQuery masih merupakan pilihan yang kuat jika ingin kesederhanaan dalam pengembangan, kompatibilitas lintas-browser yang baik, dan alat yang lebih kaya dalam satu paket. Ini cocok untuk proyek-proyek yang lebih lama yang masih menggunakan jQuery atau jika merasa lebih nyaman dengan antarmuka yang disediakan oleh jQuery.
+
+## **Perbedaan antara Asynchronous Programming dengan Synchronous Programming**:
+
+   - **Synchronous Programming (Sync)**: Pada pemrograman sinkron, tugas-tugas dieksekusi secara berurutan satu per satu. Setiap tugas harus menunggu tugas sebelumnya selesai sebelum dapat dijalankan. Ini berarti bahwa jika tugas pertama memakan waktu lama, maka semua tugas berikutnya harus menunggu.
+   
+   - **Asynchronous Programming (Async)**: Pada pemrograman asinkron, tugas-tugas dapat dieksekusi secara independen tanpa harus menunggu satu sama lain. Ini memungkinkan tugas-tugas yang memakan waktu lama untuk dieksekusi di latar belakang sementara tugas lain dapat dilanjutkan. Asynchronous programming sering digunakan untuk mengatasi operasi I/O yang memakan waktu seperti mengambil data dari server, operasi jaringan, atau input/output file.
+
+## **Paradigma Event-Driven Programming**:
+
+   Paradigma event-driven programming adalah pendekatan dalam pemrograman di mana program merespons peristiwa (events) yang terjadi, seperti input pengguna, perubahan status, atau tindakan lain yang dapat memicu respons. Ini berarti program tidak selalu berjalan secara berurutan, tetapi dapat menunggu peristiwa yang akan datang dan meresponsnya.
+
+   Dalam tugas, pengguna merespons berbagai peristiwa, seperti mengklik tombol "Tambah Produk" atau mengklik tombol "Hapus" pada item produk. Ketika pengguna melakukan tindakan ini, JavaScript merespons peristiwa tersebut dengan mengirimkan permintaan AJAX ke server atau menampilkan modul tambahan seperti modal "Tambah Produk". Dengan demikian, paradigma event-driven programming digunakan untuk mengatasi peristiwa pengguna dan meresponsnya secara dinamis, yang memungkinkan interaksi yang lebih baik dengan aplikasi web  tanpa harus memuat ulang seluruh halaman.
+
+## Cara saya mengimplementasikan checklist di atas secara step-by-step 
+* AJAX GET untuk Mengambil Data Item: Untuk membuatnya bekerja, pastikan memiliki view di Django yang melayani URL {% url 'main:get_product_json' %} dan mengembalikan data produk dalam format JSON.
+* Modal untuk Penambahan Item dengan AJAX POST: Ketika tombol "Add Product" di dalam modal diklik (button_add), fungsi addProduct dipanggil, yang akan melakukan AJAX POST ke {% url 'main:add_product_ajax' %}.
+* Membuat Fungsi View untuk Menambahkan Item: Buat fungsi view di Django yang menerima POST request ke URL /create-ajax/. Fungsi view ini harus mengambil data dari request, validasi, dan menambahkannya ke database. Setelah berhasil, kembalikan respons positif (misalnya, status 201 atau JSON yang mengindikasikan sukses). Jika ada kesalahan, kembalikan pesan kesalahan yang relevan.
+* Menyambungkan Form ke Path /create-ajax/: harus memastikan bahwa form di dalam modal mengarah ke {% url 'main:add_product_ajax' %} untuk submit. Ini sudah dilakukan di fungsi addProduct.
+* Refresh Asinkronus: Setelah AJAX POST sukses (dalam fungsi addProduct), memanggil fungsi refreshProducts untuk memperbarui daftar produk di halaman tanpa perlu me-refresh seluruh halaman.
+* Melakukan Perintah collectstatic:
+    * menambahkan STATIC_ROOT di settings.py . Ini adalah lokasi di mana Django akan menempatkan semua file statis saat menjalankan collectstatic. STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+</details>
