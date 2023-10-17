@@ -1,4 +1,4 @@
-## Link app : http://michelle-angelica21-tugas.pbp.cs.ui.ac.id/
+## Link app : http://michelle-angelica21-tugas.pbp.cs.ui.ac.id/main/login/
 
 <details>
 <summary>Tugas 3</summary>
