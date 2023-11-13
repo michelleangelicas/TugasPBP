@@ -25,14 +25,14 @@ def show_main(request):
     products = Product.objects.filter(user=request.user)
 
     
-    student_info = {
+    info_student = {
         'nama_mahasiswa': request.user.username,
         'class': 'PBP C',
     }
 
    
     context = {
-        'student_info': student_info,
+        'info_student': info_student,
         'products': products,
         'last_login': request.COOKIES['last_login'],
     }
