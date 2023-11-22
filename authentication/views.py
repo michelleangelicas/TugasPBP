@@ -18,7 +18,7 @@ def login(request):
                 "username": user.username,
                 "status": True,
                 "message": "Login sukses!",
-                # "id": user.id,
+                "id": user.id,
                 # Tambahkan data lainnya jika ingin mengirim data ke Flutter.
             }, status=200)
         else:
@@ -63,7 +63,7 @@ def register(request):
         return JsonResponse({
             "status": True,
             "message": "Account created successfully!",
-            # "user_id": new_user.id,
+            "user_id": new_user.id,
         }, status=200)
     
     return JsonResponse({
